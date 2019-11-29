@@ -7,6 +7,22 @@ Vue.config.productionTip = false
 // @符号指代src文件夹
 import "@/assets/css/normalize.css"
 import "@/assets/js/rem.js"
+// 引入vant库 完全引入
+// import Vant from 'vant';
+// import 'vant/lib/index.css';
+
+// Vue.use(Vant);
+
+
+
+// 按需引入vant
+import { Button, Icon, NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload } from 'vant';
+// import { Icon } from 'vant';
+
+Vue.use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload)
+// Vue.use(Icon);
+
+
 new Vue({
   router,
   store,
