@@ -22,6 +22,7 @@ import { Button, Icon, NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload } 
 Vue.use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload)
 // Vue.use(Icon);
 
+import "@/mock/mock.js";
 
 new Vue({
   router,
