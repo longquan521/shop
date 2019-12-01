@@ -16,11 +16,9 @@ import "@/assets/js/rem.js"
 
 
 // 按需引入vant
-import { Button, Icon, NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload } from 'vant';
-// import { Icon } from 'vant';
+import { Toast, CellGroup, Button, Icon, NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Tab, Tabs, Field } from 'vant';
 
-Vue.use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload)
-// Vue.use(Icon);
+Vue.use(CellGroup).use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload).use(Tab).use(Tabs).use(Field).use(Toast)
 
 import "@/mock/mock.js";
 
