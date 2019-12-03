@@ -1,26 +1,36 @@
 <template>
   <div class="container">
     <!-- 头部 -->
-    <van-nav-bar title="首页" class="nav-title">
+    <van-nav-bar title="首页"
+                 class="nav-title">
       <!-- slot插槽 -->
-      <van-icon name="search" slot="left"></van-icon>
-      <van-icon name="cart" slot="right"></van-icon>
+      <van-icon name="search"
+                slot="left"></van-icon>
+      <van-icon @click="$router.push('/profile')"
+                slot="right">{{JSON.stringify(userInfo) ==="{}" ? "未登录" :userInfo.userName }}</van-icon>
     </van-nav-bar>
     <!-- 轮播图 -->
     <div class="carousel">
-      <van-swipe :autoplay="5000" indicator-color="white">
-        <van-swipe-item class="carousel-item" v-for="(item,index) in carouselItem" :key="index">
-          <img v-lazy="item.imgSrc" alt />
+      <van-swipe :autoplay="5000"
+                 indicator-color="white">
+        <van-swipe-item class="carousel-item"
+                        v-for="(item,index) in carouselItem"
+                        :key="index">
+          <img v-lazy="item.imgSrc"
+               alt />
         </van-swipe-item>
       </van-swipe>
     </div>
     <!-- 热门商品 -->
     <div class="hot">
       <p class="hot-title">热门商品</p>
-      <swiper class="hot-swiper" :options="swiperOption">
-        <swiper-slide v-for="(item,index) in hotProducts" :key="index">
+      <swiper class="hot-swiper"
+              :options="swiperOption">
+        <swiper-slide v-for="(item,index) in hotProducts"
+                      :key="index">
           <div class="hot-swiper-content">
-            <img :src="item.img" alt />
+            <img :src="item.img"
+                 alt />
             <div>{{item.name}}</div>
             <div>￥{{item.price}}</div>
           </div>
@@ -31,8 +41,11 @@
     <div class="variety">
       <p>推荐商品</p>
       <ul>
-        <li class="variety-item" v-for="(item,index) in varietyItem" :key="index">
-          <img :src="item.img" alt />
+        <li class="variety-item"
+            v-for="(item,index) in varietyItem"
+            :key="index">
+          <img :src="item.img"
+               alt />
           <p>{{item.name}}</p>
           <p>￥{{item.price}}</p>
         </li>
@@ -48,6 +61,7 @@ import "swiper/dist/css/swiper.css";
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 import axios from "axios";
 import url from "@/service.config.js";
+import { mapState } from "vuex"; //映射vuex里的state
 export default {
   data() {
     return {
@@ -318,12 +332,15 @@ export default {
     let url5 = url.getVarietyItem;
     axios.get(url5).then(res => {
       this.varietyItem = res.data;
-      console.log(this.varietyItem);
+      // console.log(this.varietyItem);
     });
+  },
+  computed: {
+    ...mapState(["userInfo"])
   }
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .nav-title {
   position: fixed;
   width: 100%;

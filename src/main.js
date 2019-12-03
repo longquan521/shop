@@ -16,9 +16,11 @@ import "@/assets/js/rem.js"
 
 
 // 按需引入vant
-import { Toast, CellGroup, Button, Icon, NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Tab, Tabs, Field } from 'vant';
+import {
+  SubmitBar, GoodsAction, GoodsActionIcon, GoodsActionButton, PullRefresh, List, Row, Col, Toast, CellGroup, Button, Icon, NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Tab, Tabs, Field, Card
+} from 'vant';
 
-Vue.use(CellGroup).use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload).use(Tab).use(Tabs).use(Field).use(Toast)
+Vue.use(CellGroup).use(Button).use(Icon).use(NavBar).use(Tabbar).use(TabbarItem).use(Swipe).use(SwipeItem).use(Lazyload).use(Tab).use(Tabs).use(Field).use(Toast).use(Row).use(Col).use(List).use(PullRefresh).use(GoodsAction).use(GoodsActionIcon).use(GoodsActionButton).use(Card).use(SubmitBar)
 
 import "@/mock/mock.js";
 
