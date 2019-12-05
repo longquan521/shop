@@ -47,7 +47,7 @@ export default new Router({
         default: Cart,
         "footer-bar": FooterBar
       }, meta: {
-        keepAlive: true
+        keepAlive: false
       }
     }, {
       path: '/profile',
